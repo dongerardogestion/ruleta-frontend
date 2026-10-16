@@ -167,7 +167,7 @@ const Wheel = forwardRef(function Wheel({ slots, size = 300 }, ref) {
               <text
                 x={lx} y={ly}
                 fill={s.type === "none" ? MUTED : "#0A0A0A"}
-                fontSize={size < 260 ? 10 : 12}
+                fontSize={Math.round(size * 0.045)}
                 fontWeight="400"
                 letterSpacing="0.3"
                 textAnchor="middle"
@@ -825,7 +825,7 @@ export default function RuletaPremios() {
             {flow === "spin" && (
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 22, padding: "10px 0 20px" }}>
                 <div style={{ fontSize: 13, color: MUTED }}>{formData.name}, es tu turno</div>
-                <Wheel ref={wheelRef} slots={wheelSlots} size={300} />
+                <Wheel ref={wheelRef} slots={wheelSlots} size={Math.min(window.innerWidth - 40, window.innerHeight * 0.6, 700)} />
                 <button style={{ ...primaryBtn(GOLD), opacity: spinning ? 0.6 : 1, minWidth: 180 }} disabled={spinning} onClick={spin}>
                   {spinning ? "Girando…" : "GIRAR"}
                 </button>
