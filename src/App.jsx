@@ -268,7 +268,7 @@ function ConfirmDialog({ title, message, confirmLabel, onCancel, onConfirm }) {
 
 function TicketCard({ children, accent }) {
   return (
-    <div style={{ position: "relative", width: "100%", maxWidth: 380 }}>
+    <div style={{ position: "relative", width: "100%", maxWidth: 380, zoom: Math.min(1.8, Math.max(1, (window.innerWidth - 40) / 380)) }}>
       <div
         style={{
           background: SURFACE_2, border: `2px dashed ${accent}`, borderRadius: 16,
