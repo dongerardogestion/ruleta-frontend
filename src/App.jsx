@@ -484,7 +484,7 @@ export default function RuletaPremios() {
   const continueAfterResult = () => {
     if (lastResult?.type === "prize") {
       setBirthdate("");
-      setFlow("birthdate");
+      backToIdle();
     } else {
       backToIdle();
     }
